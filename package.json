@@ -1,0 +1,30 @@
+{
+  "name": "docworker",
+  "version": "0.0.1",
+  "description": "Doc Worker was born out of a desier to be able to generate a JavaScript documentation site from Markdown files and, if present, code comments (à la JSDoc).",
+  "main": "index.js",
+  "scripts": {
+    "test": "./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonzofish/docworker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gonzofish/docworker/issues"
+  },
+  "homepage": "https://github.com/gonzofish/docworker#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-node": "^6.0.1",
+    "nodemon": "^1.17.3",
+    "sinon": "^4.5.0",
+    "tap": "^11.1.4"
+  },
+  "dependencies": {
+    "commander": "^2.15.1"
+  }
+}
