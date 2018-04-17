@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-module.exports = (configFile) => {
+module.exports = (configFile, ignoreConfig) => {
   const projectDir = process.cwd();
   const file = findConfigFile(configFile, projectDir);
   let config = {
@@ -9,7 +9,7 @@ module.exports = (configFile) => {
     src: path.join(projectDir, 'src'),
   };
 
-  if (file) {
+  if (!ignoreConfig && file) {
     config = Object.assign(
       {},
       config,
@@ -24,7 +24,7 @@ const findConfigFile = (configFile, projectDir) => {
   let file;
 
   if (configFile && fs.existsSync(configFile)) {
-    file = configFile;
+    file = path.resolve(projectDir, configFile);
   } else {
     file = getDotFile(projectDir);
   }
@@ -33,7 +33,7 @@ const findConfigFile = (configFile, projectDir) => {
 };
 
 const getDotFile = (projectDir) => {
-  const prefix = path.join(projectDir, '.docworker');
+  const prefix = path.join(projectDir, '.docworker.config');
   let dotFile;
 
   if (fs.existsSync(`${prefix}.js`) ||
