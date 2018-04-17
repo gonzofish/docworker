@@ -1,4 +1,4 @@
-# Doc Worker
+# [WIP] Doc Worker
 
 Doc Worker was born out of a desier to be able to generate a JavaScript
 documentation site from Markdown files and, if present, code comments
@@ -76,3 +76,5 @@ Below is how this can be done as an NPM script:
   }
 }
 ```
+
+**NOTE:** CLI arguments will take precedence over the configuration file
